@@ -12,17 +12,17 @@ void tesiCris_Margot_Manager::init()
 	int numParams = 3;
 	int numMetrics = 2;
 
-	std::vector<float> defaultConfiguration = {10, 1, 4};
+	std::vector<float> defaultConfiguration = {2, 50, 810};
 
 	std::vector< std::string > info = { "metric avg_error",
 										"metric avg_throughput",
 
-										"param param1 range 10 1000 10",
-										"param param2 enum 1 2 3 4 5 6 7 8 9 10",
-										"param param3 range 4 32 4" };
+										"param param1 enum 1 2 5 10 500 2000 8000",
+										"param param2 enum 1 50 1000 2000",
+										"param param3 range 10 9610 800" };
 
 	// milliseconds
-	int threadMQTTReqSleepTime = 1000;
+	int threadMQTTReqSleepTime = 30000;
 
 	tesiCris_framework = new Framework( appName,
 											

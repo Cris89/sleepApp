@@ -11,8 +11,7 @@ void go_to_bed (int sleepTime)
 	std::this_thread::sleep_for(std::chrono::milliseconds(sleepTime));
 }
 
-// error variable (computed at runtime)
-double error;
+
 
 int main()
 {
@@ -22,7 +21,8 @@ int main()
 	// amount of milliseconds for go_to_bed function
 	int sleepTime;
 
-	
+	// error variable (computed at runtime)
+	long double error;
 
 	// tesiCris and margot initialization
 	tesiCris_Margot_Manager tmm;
@@ -33,7 +33,7 @@ int main()
 	int param2;
 	int param3;
 
-	std::chrono::time_point<std::chrono::steady_clock> duration = std::chrono::steady_clock::now() + std::chrono::minutes(100);
+	std::chrono::time_point<std::chrono::steady_clock> duration = std::chrono::steady_clock::now() + std::chrono::hours(100);
 
 	while (std::chrono::steady_clock::now() < duration)
 	{
@@ -56,13 +56,13 @@ int main()
 
 		go_to_bed(sleepTime);
 
-		// funzione che mi calcola l'errore
+		error = float(1) / ( ( 6 * (1 / param1) ) - 
+							 ( 18.97 * log(param2) ) +
+							 ( 79.81 * param3 ) );
 
-		error = float(1) / 666;
+		std::cout << "error: " << error << std::endl;
 
 		margot::sleeping::stop_monitor( num_threads, error );
-		//print values to file
-		margot::sleeping::log();
 
 		// the OP is sent to the server_handler
 		tmm.sendResult( { param1, param2, param3 }, { margot::sleeping::avg_error, margot::sleeping::avg_throughput } );
