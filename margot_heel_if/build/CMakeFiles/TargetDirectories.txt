@@ -1,0 +1,7 @@
+/home/cris/projects/sleepApp/margot_heel_if/build/CMakeFiles/install/strip.dir
+/home/cris/projects/sleepApp/margot_heel_if/build/CMakeFiles/install/local.dir
+/home/cris/projects/sleepApp/margot_heel_if/build/CMakeFiles/margot_heel_if.dir
+/home/cris/projects/sleepApp/margot_heel_if/build/CMakeFiles/edit_cache.dir
+/home/cris/projects/sleepApp/margot_heel_if/build/CMakeFiles/rebuild_cache.dir
+/home/cris/projects/sleepApp/margot_heel_if/build/CMakeFiles/install.dir
+/home/cris/projects/sleepApp/margot_heel_if/build/CMakeFiles/list_install_components.dir

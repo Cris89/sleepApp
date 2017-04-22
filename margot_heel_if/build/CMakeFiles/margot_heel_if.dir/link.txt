@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmargot_heel_if.a  CMakeFiles/margot_heel_if.dir/margot.cc.o CMakeFiles/margot_heel_if.dir/margot_c_interface.cc.o CMakeFiles/margot_heel_if.dir/op_list.sleeping.cc.o
+/usr/bin/ranlib libmargot_heel_if.a
