@@ -6,7 +6,7 @@
 
 
 
-void go_to_bed (int sleepTime)
+void go_to_bed(int sleepTime)
 {
 	std::this_thread::sleep_for(std::chrono::milliseconds(sleepTime));
 }
@@ -18,7 +18,7 @@ int main()
 	// variable for throughput monitor
 	int num_threads = 1;
 
-	// amount of milliseconds for go_to_bed function
+	// amount of milliseconds for go_to_bed() function (computed at runtime)
 	int sleepTime;
 
 	// error variable (computed at runtime)
@@ -41,28 +41,33 @@ int main()
 		tmm.updateOPs();
 
 		//check if the configuration is different wrt the previous one
-		//NOTE: trials is an output parameter!
 		if (margot::sleeping::update(param1, param2, param3))
 		{
-			//Writing the "trials" variable is enough to change configuration
 			margot::sleeping::manager.configuration_applied();
 		}
 		//monitors wrap the autotuned function
 		margot::sleeping::start_monitor();
 
-		sleepTime = ( 10000 * log(param1) ) + 
+		/*sleepTime = ( 10000 * log(param1) ) + 
 					( 50 * param2 ) +
-					( 500 + sqrt(param3) );
+					( 500 + sqrt(param3) );*/
+
+		sleepTime = ( 10 * log(param1) ) + 
+					( 5 * param2 ) +
+					( 50 + sqrt(param3) );
 
 		go_to_bed(sleepTime);
 
-		error = float(1) / ( ( 6 * (1 / param1) ) - 
+		/*error = float(1) / ( ( 6 * (1 / param1) ) - 
 							 ( 18.97 * log(param2) ) +
-							 ( 79.81 * param3 ) );
+							 ( 79.81 * param3 ) );*/
 
-		std::cout << "error: " << error << std::endl;
+		error = ( 6 * (1 / param1) ) - 
+				( 1.97 * log(param2) ) +
+				( 7.81 * param3 );
 
 		margot::sleeping::stop_monitor( num_threads, error );
+		margot::sleeping::log();
 
 		// the OP is sent to the server_handler
 		tmm.sendResult( { param1, param2, param3 }, { margot::sleeping::avg_error, margot::sleeping::avg_throughput } );

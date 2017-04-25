@@ -1,12 +1,12 @@
 [
 {
   "directory": "/home/cris/projects/sleepApp/build",
-  "command": "/usr/bin/c++    -I/home/cris/projects/benchmark_mARGOt/margot_project/core/framework/monitor/include -I/home/cris/projects/benchmark_mARGOt/margot_project/core/framework/asrtm/include -I/home/cris/projects/benchmark_mARGOt/margot_project/core/build/framework/include -I/home/cris/projects/sleepApp/margot_heel_if -I/usr/local/include -I/home/cris/projects/sleepApp/src   -std=c++0x -static-libgcc -Wl,--hash-style=both,--as-needed -pthread -fopenmp -ftemplate-depth=1100 -O3 -DNDEBUG -march=native -mtune=native -O3 -ftemplate-depth=1100   -o CMakeFiles/sleepApp.dir/src/main.cpp.o -c /home/cris/projects/sleepApp/src/main.cpp",
+  "command": "/usr/bin/c++    -I/home/cris/projects/benchmark/margot_project/core/framework/monitor/include -I/home/cris/projects/benchmark/margot_project/core/framework/asrtm/include -I/home/cris/projects/benchmark/margot_project/core/build/framework/include -I/home/cris/projects/sleepApp/margot_heel_if -I/usr/local/include -I/home/cris/projects/sleepApp/src   -std=c++0x -static-libgcc -Wl,--hash-style=both,--as-needed -pthread -fopenmp -ftemplate-depth=1100 -O2 -DNDEBUG -march=native -mtune=native -O3 -ftemplate-depth=1100   -o CMakeFiles/sleepApp.dir/src/main.cpp.o -c /home/cris/projects/sleepApp/src/main.cpp",
   "file": "/home/cris/projects/sleepApp/src/main.cpp"
 },
 {
   "directory": "/home/cris/projects/sleepApp/build",
-  "command": "/usr/bin/c++    -I/home/cris/projects/benchmark_mARGOt/margot_project/core/framework/monitor/include -I/home/cris/projects/benchmark_mARGOt/margot_project/core/framework/asrtm/include -I/home/cris/projects/benchmark_mARGOt/margot_project/core/build/framework/include -I/home/cris/projects/sleepApp/margot_heel_if -I/usr/local/include -I/home/cris/projects/sleepApp/src   -std=c++0x -static-libgcc -Wl,--hash-style=both,--as-needed -pthread -fopenmp -ftemplate-depth=1100 -O3 -DNDEBUG -march=native -mtune=native -O3 -ftemplate-depth=1100   -o CMakeFiles/sleepApp.dir/src/tesiCris_margot_manager.cpp.o -c /home/cris/projects/sleepApp/src/tesiCris_margot_manager.cpp",
+  "command": "/usr/bin/c++    -I/home/cris/projects/benchmark/margot_project/core/framework/monitor/include -I/home/cris/projects/benchmark/margot_project/core/framework/asrtm/include -I/home/cris/projects/benchmark/margot_project/core/build/framework/include -I/home/cris/projects/sleepApp/margot_heel_if -I/usr/local/include -I/home/cris/projects/sleepApp/src   -std=c++0x -static-libgcc -Wl,--hash-style=both,--as-needed -pthread -fopenmp -ftemplate-depth=1100 -O2 -DNDEBUG -march=native -mtune=native -O3 -ftemplate-depth=1100   -o CMakeFiles/sleepApp.dir/src/tesiCris_margot_manager.cpp.o -c /home/cris/projects/sleepApp/src/tesiCris_margot_manager.cpp",
   "file": "/home/cris/projects/sleepApp/src/tesiCris_margot_manager.cpp"
 }
 ]

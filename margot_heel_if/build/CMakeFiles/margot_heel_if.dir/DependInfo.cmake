@@ -12,9 +12,9 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/cris/projects/benchmark_mARGOt/margot_project/core/framework/monitor/include"
-  "/home/cris/projects/benchmark_mARGOt/margot_project/core/framework/asrtm/include"
-  "/home/cris/projects/benchmark_mARGOt/margot_project/core/build/framework/include"
+  "/home/cris/projects/benchmark/margot_project/core/framework/monitor/include"
+  "/home/cris/projects/benchmark/margot_project/core/framework/asrtm/include"
+  "/home/cris/projects/benchmark/margot_project/core/build/framework/include"
   "../"
   )
 

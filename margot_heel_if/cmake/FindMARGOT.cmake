@@ -13,9 +13,9 @@
 ## -----------------------------------------------------------------------------
 ## Check for the header files
 
-set(MARGOT_SOURCE_PATH /home/cris/projects/benchmark_mARGOt/margot_project/core )
-set(MARGOT_BINARY_PATH /home/cris/projects/benchmark_mARGOt/margot_project/core/build )
-set(MARGOT_INSTALL_PATH /home/cris/projects/benchmark_mARGOt/margot_project/core/install )
+set(MARGOT_SOURCE_PATH /home/cris/projects/benchmark/margot_project/core )
+set(MARGOT_BINARY_PATH /home/cris/projects/benchmark/margot_project/core/build )
+set(MARGOT_INSTALL_PATH /home/cris/projects/benchmark/margot_project/core/install )
 
 # check for the header of the monitor module
 find_path (MARGOT_MONITOR_INCLUDES margot/monitor.hpp PATHS

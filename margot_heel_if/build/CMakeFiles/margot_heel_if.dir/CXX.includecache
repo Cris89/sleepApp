@@ -14,11 +14,11 @@ unordered_map
 margot/operating_point.hpp
 -
 
-/home/cris/projects/benchmark_mARGOt/margot_project/core/build/framework/include/margot/config.hpp
+/home/cris/projects/benchmark/margot_project/core/build/framework/include/margot/config.hpp
 cstddef
 -
 
-/home/cris/projects/benchmark_mARGOt/margot_project/core/framework/asrtm/include/margot/asrtm.hpp
+/home/cris/projects/benchmark/margot_project/core/framework/asrtm/include/margot/asrtm.hpp
 string
 -
 map
@@ -28,21 +28,21 @@ mutex
 memory
 -
 margot/operating_point.hpp
-/home/cris/projects/benchmark_mARGOt/margot_project/core/framework/asrtm/include/margot/margot/operating_point.hpp
+/home/cris/projects/benchmark/margot_project/core/framework/asrtm/include/margot/margot/operating_point.hpp
 margot/state.hpp
-/home/cris/projects/benchmark_mARGOt/margot_project/core/framework/asrtm/include/margot/margot/state.hpp
+/home/cris/projects/benchmark/margot_project/core/framework/asrtm/include/margot/margot/state.hpp
 margot/knowledge_base.hpp
-/home/cris/projects/benchmark_mARGOt/margot_project/core/framework/asrtm/include/margot/margot/knowledge_base.hpp
+/home/cris/projects/benchmark/margot_project/core/framework/asrtm/include/margot/margot/knowledge_base.hpp
 margot/rank_calculator.hpp
-/home/cris/projects/benchmark_mARGOt/margot_project/core/framework/asrtm/include/margot/margot/rank_calculator.hpp
+/home/cris/projects/benchmark/margot_project/core/framework/asrtm/include/margot/margot/rank_calculator.hpp
 margot/config.hpp
-/home/cris/projects/benchmark_mARGOt/margot_project/core/framework/asrtm/include/margot/margot/config.hpp
+/home/cris/projects/benchmark/margot_project/core/framework/asrtm/include/margot/margot/config.hpp
 margot/learning_state.hpp
-/home/cris/projects/benchmark_mARGOt/margot_project/core/framework/asrtm/include/margot/margot/learning_state.hpp
+/home/cris/projects/benchmark/margot_project/core/framework/asrtm/include/margot/margot/learning_state.hpp
 margot/mab_sw_ucb.hpp
-/home/cris/projects/benchmark_mARGOt/margot_project/core/framework/asrtm/include/margot/margot/mab_sw_ucb.hpp
+/home/cris/projects/benchmark/margot_project/core/framework/asrtm/include/margot/margot/mab_sw_ucb.hpp
 
-/home/cris/projects/benchmark_mARGOt/margot_project/core/framework/asrtm/include/margot/knowledge_base.hpp
+/home/cris/projects/benchmark/margot_project/core/framework/asrtm/include/margot/knowledge_base.hpp
 map
 -
 vector
@@ -54,13 +54,13 @@ memory
 chrono
 -
 margot/operating_point.hpp
-/home/cris/projects/benchmark_mARGOt/margot_project/core/framework/asrtm/include/margot/margot/operating_point.hpp
+/home/cris/projects/benchmark/margot_project/core/framework/asrtm/include/margot/margot/operating_point.hpp
 margot/view.hpp
-/home/cris/projects/benchmark_mARGOt/margot_project/core/framework/asrtm/include/margot/margot/view.hpp
+/home/cris/projects/benchmark/margot_project/core/framework/asrtm/include/margot/margot/view.hpp
 margot/config.hpp
-/home/cris/projects/benchmark_mARGOt/margot_project/core/framework/asrtm/include/margot/margot/config.hpp
+/home/cris/projects/benchmark/margot_project/core/framework/asrtm/include/margot/margot/config.hpp
 
-/home/cris/projects/benchmark_mARGOt/margot_project/core/framework/asrtm/include/margot/learning_state.hpp
+/home/cris/projects/benchmark/margot_project/core/framework/asrtm/include/margot/learning_state.hpp
 memory
 -
 vector
@@ -74,7 +74,7 @@ margot/operating_point.hpp
 margot/state.hpp
 -
 
-/home/cris/projects/benchmark_mARGOt/margot_project/core/framework/asrtm/include/margot/mab_sw_ucb.hpp
+/home/cris/projects/benchmark/margot_project/core/framework/asrtm/include/margot/mab_sw_ucb.hpp
 vector
 -
 deque
@@ -86,13 +86,13 @@ unordered_map
 limits
 -
 margot/config.hpp
-/home/cris/projects/benchmark_mARGOt/margot_project/core/framework/asrtm/include/margot/margot/config.hpp
+/home/cris/projects/benchmark/margot_project/core/framework/asrtm/include/margot/margot/config.hpp
 margot/learning_state.hpp
-/home/cris/projects/benchmark_mARGOt/margot_project/core/framework/asrtm/include/margot/margot/learning_state.hpp
+/home/cris/projects/benchmark/margot_project/core/framework/asrtm/include/margot/margot/learning_state.hpp
 fstream
 -
 
-/home/cris/projects/benchmark_mARGOt/margot_project/core/framework/asrtm/include/margot/operating_point.hpp
+/home/cris/projects/benchmark/margot_project/core/framework/asrtm/include/margot/operating_point.hpp
 deque
 -
 unordered_set
@@ -106,7 +106,7 @@ map
 margot/config.hpp
 -
 
-/home/cris/projects/benchmark_mARGOt/margot_project/core/framework/asrtm/include/margot/rank_calculator.hpp
+/home/cris/projects/benchmark/margot_project/core/framework/asrtm/include/margot/rank_calculator.hpp
 cstddef
 -
 functional
@@ -118,7 +118,7 @@ margot/config.hpp
 margot/operating_point.hpp
 -
 
-/home/cris/projects/benchmark_mARGOt/margot_project/core/framework/asrtm/include/margot/state.hpp
+/home/cris/projects/benchmark/margot_project/core/framework/asrtm/include/margot/state.hpp
 memory
 -
 tuple
@@ -136,19 +136,19 @@ cstdint
 map
 -
 margot/config.hpp
-/home/cris/projects/benchmark_mARGOt/margot_project/core/framework/asrtm/include/margot/margot/config.hpp
+/home/cris/projects/benchmark/margot_project/core/framework/asrtm/include/margot/margot/config.hpp
 margot/operating_point.hpp
-/home/cris/projects/benchmark_mARGOt/margot_project/core/framework/asrtm/include/margot/margot/operating_point.hpp
+/home/cris/projects/benchmark/margot_project/core/framework/asrtm/include/margot/margot/operating_point.hpp
 margot/goal.hpp
-/home/cris/projects/benchmark_mARGOt/margot_project/core/framework/asrtm/include/margot/margot/goal.hpp
+/home/cris/projects/benchmark/margot_project/core/framework/asrtm/include/margot/margot/goal.hpp
 margot/view.hpp
-/home/cris/projects/benchmark_mARGOt/margot_project/core/framework/asrtm/include/margot/margot/view.hpp
+/home/cris/projects/benchmark/margot_project/core/framework/asrtm/include/margot/margot/view.hpp
 margot/knowledge_base.hpp
-/home/cris/projects/benchmark_mARGOt/margot_project/core/framework/asrtm/include/margot/margot/knowledge_base.hpp
+/home/cris/projects/benchmark/margot_project/core/framework/asrtm/include/margot/margot/knowledge_base.hpp
 margot/rank_calculator.hpp
-/home/cris/projects/benchmark_mARGOt/margot_project/core/framework/asrtm/include/margot/margot/rank_calculator.hpp
+/home/cris/projects/benchmark/margot_project/core/framework/asrtm/include/margot/margot/rank_calculator.hpp
 
-/home/cris/projects/benchmark_mARGOt/margot_project/core/framework/asrtm/include/margot/view.hpp
+/home/cris/projects/benchmark/margot_project/core/framework/asrtm/include/margot/view.hpp
 unordered_map
 -
 map
@@ -160,11 +160,11 @@ algorithm
 memory
 -
 margot/config.hpp
-/home/cris/projects/benchmark_mARGOt/margot_project/core/framework/asrtm/include/margot/margot/config.hpp
+/home/cris/projects/benchmark/margot_project/core/framework/asrtm/include/margot/margot/config.hpp
 margot/operating_point.hpp
-/home/cris/projects/benchmark_mARGOt/margot_project/core/framework/asrtm/include/margot/margot/operating_point.hpp
+/home/cris/projects/benchmark/margot_project/core/framework/asrtm/include/margot/margot/operating_point.hpp
 
-/home/cris/projects/benchmark_mARGOt/margot_project/core/framework/monitor/include/margot/goal.hpp
+/home/cris/projects/benchmark/margot_project/core/framework/monitor/include/margot/goal.hpp
 functional
 -
 memory
@@ -174,11 +174,11 @@ stdexcept
 string
 -
 margot/config.hpp
-/home/cris/projects/benchmark_mARGOt/margot_project/core/framework/monitor/include/margot/margot/config.hpp
+/home/cris/projects/benchmark/margot_project/core/framework/monitor/include/margot/margot/config.hpp
 margot/monitor.hpp
-/home/cris/projects/benchmark_mARGOt/margot_project/core/framework/monitor/include/margot/margot/monitor.hpp
+/home/cris/projects/benchmark/margot_project/core/framework/monitor/include/margot/margot/monitor.hpp
 
-/home/cris/projects/benchmark_mARGOt/margot_project/core/framework/monitor/include/margot/monitor.hpp
+/home/cris/projects/benchmark/margot_project/core/framework/monitor/include/margot/monitor.hpp
 numeric
 -
 cstdint
@@ -194,15 +194,15 @@ mutex
 memory
 -
 margot/config.hpp
-/home/cris/projects/benchmark_mARGOt/margot_project/core/framework/monitor/include/margot/margot/config.hpp
+/home/cris/projects/benchmark/margot_project/core/framework/monitor/include/margot/margot/config.hpp
 
-/home/cris/projects/benchmark_mARGOt/margot_project/core/framework/monitor/include/margot/throughput_monitor.hpp
+/home/cris/projects/benchmark/margot_project/core/framework/monitor/include/margot/throughput_monitor.hpp
 chrono
 -
 margot/config.hpp
-/home/cris/projects/benchmark_mARGOt/margot_project/core/framework/monitor/include/margot/margot/config.hpp
+/home/cris/projects/benchmark/margot_project/core/framework/monitor/include/margot/margot/config.hpp
 margot/monitor.hpp
-/home/cris/projects/benchmark_mARGOt/margot_project/core/framework/monitor/include/margot/margot/monitor.hpp
+/home/cris/projects/benchmark/margot_project/core/framework/monitor/include/margot/margot/monitor.hpp
 
 /home/cris/projects/sleepApp/margot_heel_if/margot.cc
 margot.hpp

@@ -22,7 +22,7 @@ void tesiCris_Margot_Manager::init()
 										"param param3 range 10 9610 800" };
 
 	// milliseconds
-	int threadMQTTReqSleepTime = 30000;
+	int threadMQTTReqSleepTime = 3000;
 
 	tesiCris_framework = new Framework( appName,
 											
