@@ -131,8 +131,8 @@ namespace margot {
 		// --------- Initializing the block "SLEEPING"
 		sleeping::monitor::my_throughput_monitor = margot::throughput_monitor_t();
 		sleeping::monitor::my_error_monitor = margot::monitor_t<long double>();
-		sleeping::goal::my_throughput_goal = margot::goal_t(sleeping::monitor::my_throughput_monitor, margot::DataFunction::Average, margot::ComparisonFunction::Greater, static_cast<margot::throughput_monitor_t::value_type>(7));
-		sleeping::goal::my_error_goal = sleeping::manager.create_static_goal_metric(static_cast<margot::field_name_t>(sleeping::Metric::ERROR), margot::ComparisonFunction::Less, static_cast<margot::metric_t>(130));
+		sleeping::goal::my_throughput_goal = margot::goal_t(sleeping::monitor::my_throughput_monitor, margot::DataFunction::Average, margot::ComparisonFunction::Greater, static_cast<margot::throughput_monitor_t::value_type>(0.3));
+		sleeping::goal::my_error_goal = sleeping::manager.create_static_goal_metric(static_cast<margot::field_name_t>(sleeping::Metric::ERROR), margot::ComparisonFunction::Less, static_cast<margot::metric_t>(1.66));
 		//sleeping::manager.add_operating_points(sleeping::op_list);
 
 		// Defining the state "normal"

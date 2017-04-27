@@ -48,23 +48,25 @@ int main()
 		//monitors wrap the autotuned function
 		margot::sleeping::start_monitor();
 
-		/*sleepTime = ( 10000 * log(param1) ) + 
-					( 50 * param2 ) +
-					( 500 + sqrt(param3) );*/
+		sleepTime = ( +7.35 * log(param1) ) + 
+					( +38.1 * param2 ) +
+					( +52.96 + sqrt(param3) );
 
-		sleepTime = ( 10 * log(param1) ) + 
+		/*sleepTime = ( 1 * log(param1) ) + 
 					( 5 * param2 ) +
-					( 50 + sqrt(param3) );
+					( 5 + sqrt(param3) );*/
 
+		std::cout << "\n\n\nparam1 = " << param1 << std::endl;
+		std::cout << "param2 = " << param2 << std::endl;
+		std::cout << "param3 = " << param3 << std::endl;
+		std::cout << "\n\t...zzz... sleeping for " << sleepTime << " milliseconds ...zzz...\n\n\n" << std::endl;
 		go_to_bed(sleepTime);
 
-		/*error = float(1) / ( ( 6 * (1 / param1) ) - 
-							 ( 18.97 * log(param2) ) +
-							 ( 79.81 * param3 ) );*/
-
-		error = ( 6 * (1 / param1) ) - 
-				( 1.97 * log(param2) ) +
-				( 7.81 * param3 );
+		error = 1 / (
+						( +0.015 * sqrt(param1) ) + 
+						( +0.033 * log(param2) ) +
+						( +0.028 * log(param3) )
+					);
 
 		margot::sleeping::stop_monitor( num_threads, error );
 		margot::sleeping::log();
