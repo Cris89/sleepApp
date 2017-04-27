@@ -1,4 +1,5 @@
 #include <chrono>
+#include <random>
 #include <thread>
 #include <math.h>
 
@@ -24,6 +25,16 @@ int main()
 	// error variable (computed at runtime)
 	long double error;
 
+
+
+	// noise generation for sleepTime (--> avg_throughput)
+	unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+	std::default_random_engine generator(seed);
+
+	std::gamma_distribution<double> distribution( 1, 0.5 );
+
+
+
 	// tesiCris and margot initialization
 	tesiCris_Margot_Manager tmm;
 	tmm.init();
@@ -48,13 +59,15 @@ int main()
 		//monitors wrap the autotuned function
 		margot::sleeping::start_monitor();
 
+
+
 		sleepTime = ( +7.35 * log(param1) ) + 
 					( +38.1 * param2 ) +
 					( +52.96 + sqrt(param3) );
 
-		/*sleepTime = ( 1 * log(param1) ) + 
-					( 5 * param2 ) +
-					( 5 + sqrt(param3) );*/
+		sleepTime += round( sleepTime * 0.25 * distribution(generator) );
+
+
 
 		std::cout << "\n\n\nparam1 = " << param1 << std::endl;
 		std::cout << "param2 = " << param2 << std::endl;
@@ -62,11 +75,15 @@ int main()
 		std::cout << "\n\t...zzz... sleeping for " << sleepTime << " milliseconds ...zzz...\n\n\n" << std::endl;
 		go_to_bed(sleepTime);
 
+
+
 		error = 1 / (
 						( +0.015 * sqrt(param1) ) + 
 						( +0.033 * log(param2) ) +
 						( +0.028 * log(param3) )
 					);
+
+
 
 		margot::sleeping::stop_monitor( num_threads, error );
 		margot::sleeping::log();
