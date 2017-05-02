@@ -18,6 +18,10 @@ void go_to_bed(int sleepTime)
 
 int main()
 {
+	std::ofstream f;
+	f.open( "/home/cris/Documents/serial.txt", std::ofstream::out | std::ofstream::app );
+	f << "param1 param2 param3\n";
+
 	std::chrono::steady_clock::time_point tStart = std::chrono::steady_clock::now();
 
 	// amount of milliseconds for go_to_bed() function (computed at runtime)
@@ -53,6 +57,7 @@ int main()
 			param2 = configurations[i][1];
 			param3 = configurations[i][2];
 
+			f << param1 << " " << param2 << " " << param3 << "\n";
 
 			sleepTime  = round( 
 								( +7.35 * log(param1) ) + 
@@ -83,5 +88,7 @@ int main()
 
 	uint64_t delta = std::chrono::duration_cast<std::chrono::microseconds>(tStop - tStart).count();
 
-	std::cout << "Execution time: " << delta << " microseconds" << std::endl;
+	f << "\n\n\nExecution time: " << delta << " microseconds" << std::endl;
+
+	f.close();
 }
