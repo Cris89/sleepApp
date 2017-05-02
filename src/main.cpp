@@ -20,7 +20,7 @@ int main()
 {
 	std::ofstream f;
 	f.open( "/home/cris/Documents/serial.txt", std::ofstream::out | std::ofstream::app );
-	f << "param1 param2 param3\n";
+	f << "param1 param2 param3";
 
 	std::chrono::steady_clock::time_point tStart = std::chrono::steady_clock::now();
 
@@ -51,6 +51,8 @@ int main()
 
 	for(int n = 0; n < numOPs; n++)
 	{
+		f << "\n\n##################################################\n\n";
+
 		for(int i = 0; i < configurations.size(); i++)
 		{
 			param1 = configurations[i][0];
