@@ -19,7 +19,12 @@ void tesiCris_Margot_Manager::init()
 
 										"param param1 enum 1 50 150 300 450 700 800",
 										"param param2 enum 1 50 100 150 200",
-										"param param3 range 10 850 70" };
+										"param param3 range 10 850 70",
+
+										"doe lhd",
+										"lhdSamples 10",
+
+										"numOPs 1" };
 
 	// milliseconds
 	int threadMQTTReqSleepTime = 3000;
