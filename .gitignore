@@ -1,13 +1,3 @@
 build/
-*/install/
-*/bin/
-*/results/
-*/dse/
+bin/
 margot_heel_if/
-*.pyc
-.directory
-.clang_complete
-*FindMARGOT.cmake
-*FindHEEL.cmake
-*.gch
-.gcc-flags.json
