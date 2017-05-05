@@ -75,7 +75,7 @@ int main()
 
 	std::gamma_distribution<double> distribution( 1, 0.3 );
 
-	float errorPercentage = 0.5;
+	float errorPercentage = 0.25;
 
 
 
@@ -127,8 +127,8 @@ int main()
 							( +38.1 * param2 ) +
 							( +52.96 * sqrt(param3) ) );
 
-		sleepTime += round( sleepTime * errorPercentage * distribution(generator) );
-		//sleepTime += round( sleepTime * errorPercentage * 0.3 );
+		//sleepTime += round( sleepTime * errorPercentage * distribution(generator) );
+		sleepTime += round( sleepTime * errorPercentage * 0.3 );
 
 
 

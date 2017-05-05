@@ -21,7 +21,8 @@ void tesiCris_Margot_Manager::init()
 										"param param2 enum 1 50 100 150 200",
 										"param param3 range 10 850 70",
 
-										"doe lhd",
+										"doe fcccd",
+										
 										"lhdSamples 10",
 
 										"numOPs 1" };
