@@ -17,7 +17,7 @@ public:
 
 	void updateOPs();
 
-	void sendResult( std::vector<float> params, std::vector<float> metrics );
+	void sendResult( std::vector<float> params_features, std::vector<float> metrics );
 
 	virtual ~tesiCris_Margot_Manager();
 
