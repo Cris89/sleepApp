@@ -10,6 +10,7 @@ void tesiCris_Margot_Manager::init()
 	std::string appName = "sleepApp";
 
 	int numParams = 3;
+	int numFeatures = 0;
 	int numMetrics = 2;
 
 
@@ -75,6 +76,7 @@ void tesiCris_Margot_Manager::init()
 	tesiCris_framework = new Framework( appName,
 											
 										numParams,
+										numFeatures,
 										numMetrics,
 
 										defaultConfiguration,
@@ -164,13 +166,13 @@ void tesiCris_Margot_Manager::updateOPs()
 	}
 }
 
-void tesiCris_Margot_Manager::sendResult( std::vector<float> params_features, std::vector<float> metrics )
+void tesiCris_Margot_Manager::sendResult( std::vector<float> params, std::vector<float> metrics )
 {
 	std::string operatingPoint;
 
-	for( int i = 0; i < params_features.size(); i++ )
+	for( int i = 0; i < params.size(); i++ )
 	{
-		operatingPoint += std::to_string( params_features[i] ) + " ";
+		operatingPoint += std::to_string( params[i] ) + " ";
 	}
 
 	operatingPoint = operatingPoint.substr( 0, operatingPoint.size() - 1 );
@@ -184,6 +186,41 @@ void tesiCris_Margot_Manager::sendResult( std::vector<float> params_features, st
 	operatingPoint = operatingPoint.substr( 0, operatingPoint.size() - 1 );
 
 	tesiCris_framework->sendResult( operatingPoint );
+}
+
+void tesiCris_Margot_Manager::sendResult( std::vector<float> params, std::vector<float> features, std::vector<float> metrics )
+{
+	std::string operatingPoint;
+
+	for( int i = 0; i < params.size(); i++ )
+	{
+		operatingPoint += std::to_string( params[i] ) + " ";
+	}
+
+	operatingPoint = operatingPoint.substr( 0, operatingPoint.size() - 1 );
+	operatingPoint += ":";
+
+	for( int i = 0; i < features.size(); i++ )
+	{
+		operatingPoint += std::to_string( features[i] ) + " ";
+	}
+
+	operatingPoint = operatingPoint.substr( 0, operatingPoint.size() - 1 );
+	operatingPoint += ":";
+
+	for( int i = 0; i < metrics.size(); i++ )
+	{
+		operatingPoint += std::to_string( metrics[i] ) + " ";
+	}
+
+	operatingPoint = operatingPoint.substr( 0, operatingPoint.size() - 1 );
+
+	tesiCris_framework->sendResult( operatingPoint );
+}
+
+void tesiCris_Margot_Manager::storeFeatures( std::vector<float> features )
+{
+	tesiCris_framework->storeFeatures( features );
 }
 
 tesiCris_Margot_Manager::~tesiCris_Margot_Manager()

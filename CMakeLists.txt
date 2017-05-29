@@ -2,7 +2,7 @@
 cmake_minimum_required( VERSION 2.8.12 )
 
 # the project name
-project( sleepApp )
+project( sleepApp3params )
 
 ################################
 #### General configure section

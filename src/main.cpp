@@ -9,7 +9,7 @@
 
 
 
-void go_to_bed(int sleepTime)
+void go_to_bed( int sleepTime )
 {
 	std::this_thread::sleep_for(std::chrono::milliseconds(sleepTime));
 }
@@ -107,13 +107,13 @@ int main()
 
 	std::chrono::time_point<std::chrono::steady_clock> duration = std::chrono::steady_clock::now() + std::chrono::hours(100);
 
-	while (std::chrono::steady_clock::now() < duration)
+	while( std::chrono::steady_clock::now() < duration )
 	{
 		// if new OPs are sent by the server_handler, the margot OP list is updated
 		tmm.updateOPs();
 
 		//check if the configuration is different wrt the previous one
-		if (margot::sleeping::update(param1, param2, param3))
+		if( margot::sleeping::update( param1, param2, param3 ) )
 		{
 			margot::sleeping::manager.configuration_applied();
 		}
@@ -180,7 +180,7 @@ int main()
 		std::cout << "param2 = " << param2 << std::endl;
 		std::cout << "param3 = " << param3 << std::endl;
 		std::cout << "\n\t...zzz... sleeping for " << sleepTime << " milliseconds ...zzz...\n\n\n" << std::endl;
-		go_to_bed(sleepTime);
+		go_to_bed( sleepTime );
 
 
 
@@ -196,7 +196,7 @@ int main()
 		////////////////////////////////////////////////////////////////////////////////////////////////////
 		std::chrono::steady_clock::time_point tStop = std::chrono::steady_clock::now();
 
-		uint64_t tEndComputation = std::chrono::duration_cast<std::chrono::microseconds>(tStop - tStart).count();
+		uint64_t tEndComputation = std::chrono::duration_cast<std::chrono::microseconds>( tStop - tStart ).count();
 
 		errorStory << tEndComputation << " " << margot::sleeping::avg_error << " " << param1 << " " << param2 << " " << param3 << std::endl;
 		throughputStory << tEndComputation << " " << margot::sleeping::avg_throughput << " " << param1 << " " << param2 << " " << param3 << std::endl;
