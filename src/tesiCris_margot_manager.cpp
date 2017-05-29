@@ -7,7 +7,7 @@ tesiCris_Margot_Manager::tesiCris_Margot_Manager()
 
 void tesiCris_Margot_Manager::init()
 {
-	std::string appName = "sleepApp";
+	std::string appName = "sleepApp3params";
 
 	int numParams = 3;
 	int numFeatures = 0;
@@ -57,9 +57,9 @@ void tesiCris_Margot_Manager::init()
 										"param param2 enum 1 5 10 20",
 										"param param3 range 10 46 3",
 
-										"doe fcccd",
+										"doe fcccdExtra",
 										
-										"lhdSamples 10",
+										"lhdSamples 4",
 
 										"numOPs 1",
 
