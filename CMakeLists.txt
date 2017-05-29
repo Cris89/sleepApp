@@ -87,7 +87,7 @@ set (CMAKE_EXPORT_COMPILE_COMMANDS 1)
 ###############################################
 
 # Set the application name
-set( APP_NAME "sleepApp")
+set( APP_NAME "sleepApp3params")
 
 # Build probability executable
 set(SOURCE_FILES src/main.cpp src/tesiCris_margot_manager.cpp)
