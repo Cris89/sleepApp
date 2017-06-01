@@ -16,10 +16,20 @@ void tesiCris_Margot_Manager::init()
 
 
 	/*////////////////////////////////////////////////////////////////////////////////////////////////////
-	////////// good_func
+	////////// 1st order with transformations
 	////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	// the order of parameters and features must be lexicographic
+	// es. parameters: "aaa" and "ccc", features: "bbb" --> aaa = 150, bbb = 100, ccc = 360
 	std::vector<float> defaultConfiguration = {150, 100, 360};
 
+	// in this case, 150 100 and 360 are parameters values
+	std::vector<int> params_indexes = { 0, 1, 2 };
+	
+	// in this case, there is no feature
+	std::vector<int> features_indexes = {};
+
+	// metrics and parameters must follow a lexicographic order
 	std::vector< std::string > info = { "metric avg_error",
 										"metric avg_throughput",
 
@@ -27,36 +37,35 @@ void tesiCris_Margot_Manager::init()
 										"param param2 enum 1 50 100 150 200",
 										"param param3 range 10 850 70",
 
-										"doe fcccd",
-										
-										"lhdSamples 10",
-
-										"numOPs 1",
-
 										"numFeats 0",
+										"minNumObsFeatValues 1",
+
+										"doe fcccd",
+										"lhdSamples 10",
+										"numOPs 10",
 
 										"rsm sparkGenLinRegr2nd" };
 
 	// milliseconds
 	int threadMQTTReqSleepTime = 3000;
 	////////////////////////////////////////////////////////////////////////////////////////////////////
-	////////// good_func
+	////////// 1st order with transformations
 	////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
 
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////
-	////////// strange_func
+	////////// 2nd order
 	////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	// the order of parameters and features must be lexicographic
-	// es. parameters: "aaa" and "ccc", features: "bbb" --> aaa = 150, bbb = 360, ccc = 100
+	// es. parameters: "aaa" and "ccc", features: "bbb" --> aaa = 15, bbb = 10, ccc = 10
 	std::vector<float> defaultConfiguration = { 15, 10, 10 };
 	
-	// in this case, 150 and 360 are parameters values
+	// in this case, 15 10 and 10 are parameters values
 	std::vector<int> params_indexes = { 0, 1, 2 };
 	
-	// in this case, 100 is a feature value
+	// in this case, there is no feature
 	std::vector<int> features_indexes = {};
 
 	// metrics and parameters must follow a lexicographic order
@@ -68,18 +77,18 @@ void tesiCris_Margot_Manager::init()
 										"param param3 range 10 46 3",
 
 										"numFeats 0",
-										"minNumObsFeatValues 0",
+										"minNumObsFeatValues 1",
 
-										"doe lhd",
+										"doe fcccd",
 										"lhdSamples 10",
-										"numOPs 1",
+										"numOPs 10",
 
 										"rsm sparkGenLinRegr2nd" };
 
 	// milliseconds
 	int threadMQTTReqSleepTime = 3000;
 	////////////////////////////////////////////////////////////////////////////////////////////////////
-	////////// strange_func
+	////////// 2nd order
 	////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -173,7 +182,7 @@ void tesiCris_Margot_Manager::updateOPs()
 		margot::sleeping::manager.remove_operating_points(currentOPs);
 		margot::sleeping::manager.add_operating_points(commonOPs);
 
-		/*margot::foo::manager.dump();*/
+		// margot::foo::manager.dump();
 
 		tesiCris_framework->updateOPs();
 	}

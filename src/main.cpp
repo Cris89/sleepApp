@@ -11,7 +11,7 @@
 
 void go_to_bed( int sleepTime )
 {
-	std::this_thread::sleep_for(std::chrono::milliseconds(sleepTime));
+	std::this_thread::sleep_for( std::chrono::milliseconds( sleepTime ) );
 }
 
 
@@ -75,7 +75,7 @@ int main()
 
 	std::gamma_distribution<double> distribution( 1, 0.3 );
 
-	float errorPercentage = 0.25;
+	float errorPercentage = 0.5;
 
 
 
@@ -122,15 +122,15 @@ int main()
 
 
 		/*////////////////////////////////////////////////////////////////////////////////////////////////////
-		////////// good_func
+		////////// 1st order with transformations
 		////////////////////////////////////////////////////////////////////////////////////////////////////
 		sleepTime  = round( 
 							( +7.35 * log(param1) ) + 
 							( +38.1 * param2 ) +
 							( +52.96 * sqrt(param3) ) );
 
-		//sleepTime += round( sleepTime * errorPercentage * distribution(generator) );
-		sleepTime += round( sleepTime * errorPercentage * 0.3 );
+		sleepTime += round( sleepTime * errorPercentage * distribution(generator) );
+		// sleepTime += round( sleepTime * errorPercentage * 0.3 );
 
 
 
@@ -140,20 +140,14 @@ int main()
 						( +0.033 * log(param2) ) +
 						( +0.028 * log(param3) )
 					);
-
-		/*error = 1 / (
-						( +0.015 * param1 ) + 
-						( +0.033 * param2 ) +
-						( +0.028 * param3 )
-					);*/
 		////////////////////////////////////////////////////////////////////////////////////////////////////
-		////////// good_func
+		////////// 1st order with transformations
 		////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
 
 
 		////////////////////////////////////////////////////////////////////////////////////////////////////
-		////////// strange_func
+		////////// 2nd order
 		////////////////////////////////////////////////////////////////////////////////////////////////////
 		sleepTime  = round( 
 							( +7.4 * param1 * param2 ) + 
@@ -171,7 +165,7 @@ int main()
 						( +0.019 * param3 )
 					);
 		////////////////////////////////////////////////////////////////////////////////////////////////////
-		////////// strange_func
+		////////// 2nd order
 		////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -209,6 +203,7 @@ int main()
 
 
 		// the OP is sent to the server_handler
+		// the order of parameters and features in params_features must be lexicographic, as in the defaultConfiguration
 		tmm.sendResult( { param1, param2, param3 }, { margot::sleeping::avg_error, margot::sleeping::avg_throughput } );
 	}
 }
