@@ -1,12 +1,15 @@
-#include "tesiCris_margot_manager.hpp"
+#include "agora_margot_manager.hpp"
 
-tesiCris_Margot_Manager::tesiCris_Margot_Manager()
+Agora_Margot_Manager::Agora_Margot_Manager()
 {
 	
 }
 
-void tesiCris_Margot_Manager::init()
+void Agora_Margot_Manager::init()
 {
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+	////////// Configuration part
+	////////////////////////////////////////////////////////////////////////////////////////////////////
 	std::string appName = "sleepApp3params";
 
 	int numMetrics = 2;
@@ -16,7 +19,7 @@ void tesiCris_Margot_Manager::init()
 
 
 
-	////////////////////////////////////////////////////////////////////////////////////////////////////
+	/*////////////////////////////////////////////////////////////////////////////////////////////////////
 	////////// 1st order with transformations
 	////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -35,30 +38,27 @@ void tesiCris_Margot_Manager::init()
 										"numFeats 0",
 										"minNumObsFeatValues 1",
 
-										"doe fcccd",
+										"DoE fcccd",
 										"lhdSamples 10",
-										"numOPs 1",
+										"numReps 10",
 
-										"rsm sparkGenLinRegr2nd" };
+										"RSM sparkGenLinRegrPolyComb2" };
 
 	// milliseconds
 	int threadMQTTReqSleepTime = 3000;
 	////////////////////////////////////////////////////////////////////////////////////////////////////
 	////////// 1st order with transformations
+	////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+
 	////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-	/*////////////////////////////////////////////////////////////////////////////////////////////////////
 	////////// 2nd order
 	////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	// the order of parameters and features must be lexicographic
 	// es. parameters: "aaa" and "ccc", features: "bbb" --> aaa = 15, bbb = 10, ccc = 10
 	std::vector<float> defaultConfiguration = { 15, 10, 10 };
-	
-	// in this case, there is no feature
-	std::vector<int> features_indexes = {};
 
 	// metrics and parameters must follow a lexicographic order
 	std::vector< std::string > info = { "metric avg_error",
@@ -71,23 +71,23 @@ void tesiCris_Margot_Manager::init()
 										"numFeats 0",
 										"minNumObsFeatValues 1",
 
-										"doe fcccd",
+										"DoE fcccd",
 										"lhdSamples 10",
-										"numOPs 10",
+										"numReps 1",
 
-										"rsm sparkGenLinRegr2nd" };
+										"rsm sparkGenLinRegrPolyComb2" };
 
 	// milliseconds
 	int threadMQTTReqSleepTime = 3000;
 	////////////////////////////////////////////////////////////////////////////////////////////////////
 	////////// 2nd order
-	////////////////////////////////////////////////////////////////////////////////////////////////////*/
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+	
 
 
 
 
-
-	tesiCris_framework = new Framework( appName,
+	agora_framework = new Framework( appName,
 
 										numMetrics,
 
@@ -98,28 +98,28 @@ void tesiCris_Margot_Manager::init()
 											
 										threadMQTTReqSleepTime );
 
-	tesiCris_framework->init();
+	agora_framework->init();
 
 
 
 
 
-	operating_points_t defaultOP = tesiCris_framework->getAppStruct()->getOperatingPoints()->getNewOPs();
+	operating_points_t defaultOP = agora_framework->getAppStruct()->getOperatingPoints()->getNewOPs();
 
 	margot::sleeping::manager.add_operating_points( defaultOP );
 
 	margot::init();
 }
 
-void tesiCris_Margot_Manager::updateOPs()
+void Agora_Margot_Manager::updateOPs()
 {
-	tesiCris_framework->checkOPs();
+	agora_framework->checkOPs();
 
-	if(tesiCris_framework->changeOPs == true)
+	if(agora_framework->changeOPs == true)
 	{
-		operating_points_t newOPs = tesiCris_framework->getAppStruct()->getOperatingPoints()->getNewOPs();
-		operating_points_t currentOPs = tesiCris_framework->getAppStruct()->getOperatingPoints()->getCurrentOPs();
-		operating_points_t commonOPs = tesiCris_framework->getAppStruct()->getOperatingPoints()->getCommonOPs();
+		operating_points_t newOPs = agora_framework->getAppStruct()->getOperatingPoints()->getNewOPs();
+		operating_points_t currentOPs = agora_framework->getAppStruct()->getOperatingPoints()->getCurrentOPs();
+		operating_points_t commonOPs = agora_framework->getAppStruct()->getOperatingPoints()->getCommonOPs();
 
 		/*printf("\t+-------newOPs---------+\n");
 		for( auto newOP : newOPs)
@@ -173,18 +173,19 @@ void tesiCris_Margot_Manager::updateOPs()
 		margot::sleeping::manager.remove_operating_points(currentOPs);
 		margot::sleeping::manager.add_operating_points(commonOPs);
 
-		// margot::foo::manager.dump();
+		// margot::sleeping::manager.dump();
 
-		tesiCris_framework->updateOPs();
+		agora_framework->updateOPs();
 	}
 }
 
-// the order of parameters and features in params_features must be lexicographic, as in the defaultConfiguration
-void tesiCris_Margot_Manager::sendResult( std::vector<float> params_features, std::vector<float> metrics )
+// the order of parameters and features in params_features must be lexicographic
+// the order of metrics in metrics must be lexicographic
+void Agora_Margot_Manager::sendResult( std::vector<float> params_features, std::vector<float> metrics )
 {
 	std::string operatingPoint;
 
-	std::vector<int> fs_idx = tesiCris_framework->getAppStruct()->getFeaturesIndexes();
+	std::vector<int> fs_idx = agora_framework->getAppStruct()->getFeaturesIndexes();
 
 	std::vector<float> ps_v;
 	std::vector<float> fs_v;
@@ -217,6 +218,7 @@ void tesiCris_Margot_Manager::sendResult( std::vector<float> params_features, st
 	}
 
 
+
 	const int num_params = ps_v.size();
 	for( int i = 0; i < num_params; i++ )
 	{
@@ -243,15 +245,16 @@ void tesiCris_Margot_Manager::sendResult( std::vector<float> params_features, st
 
 	operatingPoint = operatingPoint.substr( 0, operatingPoint.size() - 1 );
 
-	tesiCris_framework->sendResult( operatingPoint );
+	agora_framework->sendResult( operatingPoint );
 }
 
-void tesiCris_Margot_Manager::storeFeatures( std::vector<float> features )
+// features must be in lexicographic order
+void Agora_Margot_Manager::storeFeatures( std::vector<float> features )
 {
-	tesiCris_framework->storeFeatures( features );
+	agora_framework->storeFeatures( features );
 }
 
-tesiCris_Margot_Manager::~tesiCris_Margot_Manager()
+Agora_Margot_Manager::~Agora_Margot_Manager()
 {
 
 }
